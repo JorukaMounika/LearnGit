@@ -1,0 +1,44 @@
+package com.sdet.testng;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Flipkart {
+  @Test
+  public void edge() {
+	  WebDriverManager.chromedriver().setup();
+	  
+	 WebDriver driver = new ChromeDriver();
+	 driver.get("https://www.amazon.com/ap/register?_encoding=UTF8&openid.assoc_handle=usflex&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.mode=checkid_setup&openid.ns=http://specs.openid.net/auth/2.0&openid.ns.pape=http://specs.openid.net/extensions/pape/1.0&openid.pape.max_auth_age=0&openid.return_to=https://www.amazon.com/gp/yourstore/home?ie%3DUTF8%26ref_%3Dnav_newcust");
+	 driver.manage().window().maximize();
+	 driver.findElement(By.id("ap_customer_name")).sendKeys("MOUNIKA");
+	 driver.findElement(By.name("email")).sendKeys("6309016988");
+	 driver.findElement(By.xpath("//*[@id=\"ap_password\"]")).sendKeys("Mounika@328");
+	 driver.findElement(By.cssSelector("#ap_password_check")).sendKeys("Mounika@328");
+	 driver.findElement(By.className("a-button-input")).click();
+	 driver.close();
+	 driver.quit();
+ 
+  }
+}
+  
+	
+
+  
+	  
+	 
+  
+
+
+
+  
+	  
+	 
+  
+
